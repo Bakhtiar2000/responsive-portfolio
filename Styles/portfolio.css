@@ -6,10 +6,11 @@
 /* Header section */
 .header {
     background: #FFF8F3;
-    background-image: url('../Images/header_bg.png'), url('../Images/developer.png');
+    background-image: url('../Images/header_bg.png') , url('../Images/developer.png');
     /* ../ used because the bg picture is  not in the same folder as portfolio.css. So we had to go to the previous folder */
     background-repeat: no-repeat;
     background-position: bottom right, left;
+    background-size: auto auto, auto 90%;
     /* Here the first picture is on the bottom right position and the second one is in the left position */
 }
 
@@ -34,6 +35,10 @@ nav li {
     margin-left: 50px;
 }
 
+.my-picture{
+    transform: translateX(60px);
+}
+
 .btn-primary {
     color: #FFFFFF;
     font-weight: 700;
@@ -43,6 +48,7 @@ nav li {
     border-radius: 5px;
     padding: 18px 35px;
     background-color: #FD6E0A;
+    margin-bottom: 10px;
 }
 
 .banner {
@@ -55,6 +61,7 @@ nav li {
 .banner-title {
     font-weight: 700;
     font-size: 85px;
+    margin-bottom: 40px
 }
 
 .banner-sub-title {
@@ -123,7 +130,7 @@ main {
     margin-top: 130px;
 }
 
-.skills-container {
+.skills-container {   
     display: flex;
     gap: 24px;
     /* gap is used after display flex */
@@ -202,4 +209,60 @@ main {
     width: 100%;
     /* Takes the whole width of  the div section*/
     padding: 18px 30px;
+}
+
+/* Responsive */
+
+
+@media screen and (max-width:576px) {
+    nav,
+    .banner, 
+    .skills-container, 
+    .resume-content, 
+    .about-info-container, 
+    .contact{
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px 20px;
+    }
+
+    
+    .header{
+
+        background-image: none;
+    }
+
+    .about, .contact{
+        padding: 20px;
+    }
+
+    .contact input[type="text"], input[type="email"], textarea{
+        padding: 15px auto 15px 10px;
+}
+
+@media screen and (min-width:577px) and  (max-width:992px) {
+
+    .banner, 
+    .skills-container, 
+    .resume-content, 
+    .contact{
+        padding: 10px 20px;
+
+    }
+
+    .about-info-container{
+        flex-direction: column;
+    }
+
+    .about, .contact{
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .contact{
+        flex-direction: column;
+    }
+
+    .contact input[type="text"], input[type="email"], textarea{
+        padding: 15px auto 15px 10px;
 }
